@@ -1,7 +1,7 @@
 #### Bachelor preprocessing - test
 
 # importing packages
-import mne as mne
+import mne
 import h5py
 
 # Import common libraries
