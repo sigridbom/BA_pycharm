@@ -2,7 +2,39 @@
 
 # importing packages
 import mne as mne
-import HDF5
+import h5py
+
+# Import common libraries
+import numpy as np
+import pandas as pd
+import os
+
+# Import MNE processing
+from mne.preprocessing.nirs import optical_density, beer_lambert_law
+
+# Import MNE-NIRS processing
+from mne_nirs.statistics import run_glm
+from mne_nirs.experimental_design import make_first_level_design_matrix
+from mne_nirs.statistics import statsmodels_to_results
+from mne_nirs.channels import get_short_channels, get_long_channels
+from mne_nirs.channels import picks_pair_to_idx
+from mne_nirs.visualisation import plot_glm_group_topo
+from mne_nirs.datasets import fnirs_motor_group
+from mne_nirs.visualisation import plot_glm_surface_projection
+from mne_nirs.io.fold import fold_landmark_specificity, fold_channel_specificity
+
+# Import MNE-BIDS processing
+from mne_bids import BIDSPath, read_raw_bids, get_entity_vals
+
+# Import StatsModels
+import statsmodels.formula.api as smf
+
+# Import Plotting Library
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from lets_plot import *
+LetsPlot.setup_html()
+
 
 raw_path = "/Users/sigridagersnapbomnielsen/Documents/Python/PyCharm_projects/Bachelor_project_F21/phase_2_data/NCPE-2021-11-01/NP-Ph2-303-2021-11-01/2021-11-01_001.snirf"
 
