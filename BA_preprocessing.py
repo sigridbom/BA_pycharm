@@ -1,5 +1,4 @@
-#### Bachelor preprocessing
-
+#### Bachelor preprocessing - test
 
 raw_intensity = mne.io.read_raw_snirf(raw_path, preload=True)
 raw_od = mne.preprocessing.nirs.optical_density(raw_intensity)
